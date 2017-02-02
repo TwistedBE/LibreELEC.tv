@@ -18,7 +18,6 @@
 
 PKG_NAME="ntfs-3g_ntfsprogs"
 PKG_VERSION="2016.2.22"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.ntfs-3g.org/"
@@ -31,7 +30,8 @@ PKG_LONGDESC="The NTFS-3G_ntfsprogs driver is an open source, freely available N
 PKG_IS_ADDON="no"
 PKG_AUTORECONF="yes"
 
-PKG_CONFIGURE_OPTS_TARGET="--disable-dependency-tracking \
+PKG_CONFIGURE_OPTS_TARGET="--exec-prefix=/usr/ \
+                           --disable-dependency-tracking \
                            --disable-library \
                            --enable-posix-acls \
                            --enable-mtab \
@@ -42,11 +42,18 @@ PKG_CONFIGURE_OPTS_TARGET="--disable-dependency-tracking \
 
 post_makeinstall_target() {
   # dont include ntfsprogs.
-  rm -rf $INSTALL/usr/sbin
-  rm -rf $INSTALL/usr/bin
-  rm -rf $INSTALL/bin/lowntfs-3g
-  rm -rf $INSTALL/sbin/mount.lowntfs-3g
+  for i in $INSTALL/usr/bin/*; do
+    if [ "$(basename $i)" != "ntfs-3g" ]; then
+      rm $i
+    fi
+  done
 
-  mkdir -p $INSTALL/sbin
-    ln -sf /bin/ntfs-3g $INSTALL/sbin/mount.ntfs
+  rm -rf $INSTALL/sbin
+  rm -rf $INSTALL/usr/sbin/ntfsclone
+  rm -rf $INSTALL/usr/sbin/ntfscp
+  rm -rf $INSTALL/usr/sbin/ntfsundelete
+
+  mkdir -p $INSTALL/usr/sbin
+    ln -sf /usr/bin/ntfs-3g $INSTALL/usr/sbin/mount.ntfs
+    ln -sf /usr/sbin/mkntfs $INSTALL/usr/sbin/mkfs.ntfs
 }

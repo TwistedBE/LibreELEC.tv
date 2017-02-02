@@ -17,12 +17,11 @@
 ################################################################################
 
 PKG_NAME="ccache"
-PKG_VERSION="3.2.8"
-PKG_REV="1"
+PKG_VERSION="3.3.3"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
-PKG_SITE="http://ccache.samba.org/"
-PKG_URL="http://samba.org/ftp/ccache/$PKG_NAME-$PKG_VERSION.tar.bz2"
+PKG_SITE="https://ccache.samba.org/"
+PKG_URL="https://samba.org/ftp/ccache/$PKG_NAME-$PKG_VERSION.tar.bz2"
 PKG_DEPENDS_HOST="make:host"
 PKG_SECTION="devel"
 PKG_SHORTDESC="ccache: A fast compiler cache"
@@ -38,7 +37,9 @@ PKG_CONFIGURE_OPTS_HOST="--with-bundled-zlib"
 
 post_makeinstall_host() {
 # setup ccache
-  $ROOT/$TOOLCHAIN/bin/ccache --max-size=$CCACHE_CACHE_SIZE
+  if [ -z "$CCACHE_DISABLE" ]; then
+    $ROOT/$TOOLCHAIN/bin/ccache --max-size=$CCACHE_CACHE_SIZE
+  fi
 
   cat > $ROOT/$TOOLCHAIN/bin/host-gcc <<EOF
 #!/bin/sh

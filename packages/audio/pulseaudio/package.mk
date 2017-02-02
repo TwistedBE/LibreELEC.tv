@@ -18,7 +18,6 @@
 
 PKG_NAME="pulseaudio"
 PKG_VERSION="9.0"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://pulseaudio.org/"
@@ -69,7 +68,7 @@ PKG_CONFIGURE_OPTS_TARGET="--disable-silent-rules \
                            --disable-esound \
                            --disable-solaris \
                            --disable-waveout \
-                           --disable-glib2 \
+                           --enable-glib2 \
                            --disable-gtk3 \
                            --disable-gconf \
                            $PULSEAUDIO_AVAHI \

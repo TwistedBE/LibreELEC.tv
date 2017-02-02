@@ -18,7 +18,6 @@
 
 PKG_NAME="damageproto"
 PKG_VERSION="1.2.1"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="damageproto: Damage extension header"
 PKG_LONGDESC="Damage extension headers"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"

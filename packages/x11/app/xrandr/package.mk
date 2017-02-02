@@ -18,7 +18,6 @@
 
 PKG_NAME="xrandr"
 PKG_VERSION="1.5.0"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="xrandr: A primitive command line interface to RandR extension"
 PKG_LONGDESC="Xrandr is a primitive command line interface to the RandR extension and used to set the screen size, orientation and/or reflection."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 post_makeinstall_target() {
   rm -rf $INSTALL/usr/bin/xkeystone

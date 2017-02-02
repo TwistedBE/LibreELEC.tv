@@ -17,13 +17,12 @@
 ################################################################################
 
 PKG_NAME="libamcodec"
-PKG_REV="1"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="other"
 PKG_SITE="http://openlinux.amlogic.com"
 case $TARGET_ARCH in
   arm)
-    PKG_VERSION="45a1086"
+    PKG_VERSION="5e23a81"
     PKG_URL="https://github.com/codesnake/libamcodec/archive/$PKG_VERSION.tar.gz"
     ;;
   aarch64)

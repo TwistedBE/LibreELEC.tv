@@ -18,7 +18,6 @@
 
 PKG_NAME="llvm"
 PKG_VERSION="3.9.0"
-PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://llvm.org/"
@@ -60,7 +59,8 @@ makeinstall_host() {
   cp -a bin/llvm-tblgen $ROOT/$TOOLCHAIN/bin
 }
 
-PKG_CMAKE_OPTS_TARGET="-DCMAKE_C_FLAGS="$CFLAGS" \
+PKG_CMAKE_OPTS_TARGET="-DCMAKE_BUILD_TYPE=MinSizeRel \
+                       -DCMAKE_C_FLAGS="$CFLAGS" \
                        -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
                        -DLLVM_INCLUDE_TOOLS=ON \
                        -DLLVM_BUILD_TOOLS=OFF \

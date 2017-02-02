@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="elfutils"
-PKG_VERSION="0.166"
-PKG_REV="1"
+PKG_VERSION="0.167"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://fedorahosted.org/elfutils/"

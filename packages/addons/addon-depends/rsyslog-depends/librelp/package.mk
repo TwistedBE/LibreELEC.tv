@@ -18,7 +18,6 @@
 
 PKG_NAME="librelp"
 PKG_VERSION="1.2.12"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.librelp.com/"
@@ -28,7 +27,7 @@ PKG_SECTION="rsyslog"
 PKG_SHORTDESC="librelp"
 PKG_LONGDESC="librelp"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-tls \

@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="xproto"
-PKG_VERSION="7.0.29"
-PKG_REV="1"
+PKG_VERSION="7.0.31"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.x.org/"
@@ -30,7 +29,7 @@ PKG_SHORTDESC="xproto: KB extension headers"
 PKG_LONGDESC="X11 extension headers"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"

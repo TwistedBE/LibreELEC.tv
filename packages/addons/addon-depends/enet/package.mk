@@ -18,7 +18,6 @@
 
 PKG_NAME="enet"
 PKG_VERSION="1.3.13"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE=""
 PKG_SITE=""
@@ -30,7 +29,7 @@ PKG_LONGDESC="ENet's purpose is to provide a relatively thin, simple and robust 
 
 PKG_IS_ADDON="no"
 PKG_USE_CMAKE="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--enable-static --disable-shared"
 

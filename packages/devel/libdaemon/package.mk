@@ -18,7 +18,6 @@
 
 PKG_NAME="libdaemon"
 PKG_VERSION="0.14"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://0pointer.de/lennart/projects/libdaemon/"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="libdaemon: A lightweight C library which eases the writing of UNI
 PKG_LONGDESC="A wrapper around fork() which does the correct daemonization procedure of a process. A wrapper around syslog() for simpler and compatible log output to Syslog or STDERR. An API for writing PID files. An API for serializing UNIX signals into a pipe for usage with select() or poll()."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="ac_cv_func_setpgrp_void=no \
                            --enable-static \

@@ -18,7 +18,6 @@
 
 PKG_NAME="pixman"
 PKG_VERSION="0.34.0"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.x.org/"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="pixman: Pixel manipulation library"
 PKG_LONGDESC="Pixman is a generic library for manipulating pixel regions, contains low-level pixel manipulation routines and is used by both xorg and cairo."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 if [ "$TARGET_ARCH" = arm ]; then
   if [ "$TARGET_FPU" = neon -o "$TARGET_FPU" = neon-fp16 ]; then

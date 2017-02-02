@@ -18,7 +18,6 @@
 
 PKG_NAME="libestr"
 PKG_VERSION="0.1.10"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://libestr.adiscon.com/"
@@ -28,7 +27,7 @@ PKG_SECTION="rsyslog"
 PKG_SHORTDESC="libestr: some essentials for string handling (and a bit more)"
 PKG_LONGDESC="libestr: some essentials for string handling (and a bit more)"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--enable-static --disable-shared \

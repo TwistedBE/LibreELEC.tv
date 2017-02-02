@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="taglib"
-PKG_VERSION="1.9.1"
-PKG_REV="1"
+PKG_VERSION="1.11"
 PKG_ARCH="any"
 PKG_LICENSE="LGPL"
 PKG_SITE="http://taglib.github.com/"

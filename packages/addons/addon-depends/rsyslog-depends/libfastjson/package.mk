@@ -18,7 +18,6 @@
 
 PKG_NAME="libfastjson"
 PKG_VERSION="0.99.0"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.rsyslog.com/tag/libfastjson/"
@@ -28,7 +27,7 @@ PKG_SECTION="rsyslog"
 PKG_SHORTDESC="libfastjson"
 PKG_LONGDESC="libfastjson"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--enable-static --disable-shared \

@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="libcec"
-PKG_VERSION="6d68d21"
-PKG_REV="1"
+PKG_VERSION="2fc92b5"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://libcec.pulse-eight.com/"
@@ -32,10 +31,8 @@ PKG_IS_ADDON="no"
 PKG_AUTORECONF="no"
 
 PKG_CMAKE_OPTS_TARGET="-DBUILD_SHARED_LIBS=1 \
-                       -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-                       -DCMAKE_INSTALL_LIBDIR_NOARCH=/usr/lib \
-                       -DCMAKE_INSTALL_PREFIX_TOOLCHAIN=$SYSROOT_PREFIX/usr \
-                       -DCMAKE_PREFIX_PATH=$SYSROOT_PREFIX/usr"
+                       -DCMAKE_INSTALL_LIBDIR:STRING=lib \
+                       -DCMAKE_INSTALL_LIBDIR_NOARCH:STRING=lib"
 
 if [ "$KODIPLAYER_DRIVER" = "bcm2835-firmware" ]; then
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET bcm2835-firmware"

@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="make"
-PKG_VERSION="4.1"
-PKG_REV="1"
+PKG_VERSION="4.2.1"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://www.gnu.org/software/make/"

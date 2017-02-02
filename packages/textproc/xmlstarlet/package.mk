@@ -18,7 +18,6 @@
 
 PKG_NAME="xmlstarlet"
 PKG_VERSION="1.6.1"
-PKG_REV="0"
 PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="http://xmlstar.sourceforge.net"
@@ -30,7 +29,7 @@ PKG_SHORTDESC="XMLStarlet is a command-line XML utility which allows the modific
 PKG_LONGDESC="XMLStarlet is a command line XML toolkit which can be used to transform,query, validate, and edit XML documents and files using  simple set of shellcommands in similar way it is done for plain text files  using grep/sed/awk/tr/diff/patch."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_HOST="  ac_cv_func_malloc_0_nonnull=yes \
                            ac_cv_func_realloc_0_nonnull=yes \

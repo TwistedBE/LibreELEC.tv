@@ -18,7 +18,6 @@
 
 PKG_NAME="debug"
 PKG_VERSION=""
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.openelec.tv"
@@ -38,6 +37,6 @@ if [ "$VDPAU_SUPPORT" = "yes" -a "$DISPLAYSERVER" = "x11" ]; then
   PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET vdpauinfo"
 fi
 
-if [ "$DEBUG" = "yes" ]; then
-  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET  valgrind"
+if [ "$DEBUG" = "yes" -a "$VALGRIND" = "yes" ]; then
+  PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET valgrind"
 fi

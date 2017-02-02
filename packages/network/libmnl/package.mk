@@ -18,7 +18,6 @@
 
 PKG_NAME="libmnl"
 PKG_VERSION="1.0.4"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://netfilter.org/projects/libmnl"
@@ -29,6 +28,6 @@ PKG_SHORTDESC="libmnl: a minimalistic user-space library oriented to Netlink dev
 PKG_LONGDESC="libmnl is a minimalistic user-space library oriented to Netlink developers. There are a lot of common tasks in parsing, validating, constructing of both the Netlink header and TLVs that are repetitive and easy to get wrong. This library aims to provide simple helpers that allows you to re-use code and to avoid re-inventing the wheel."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-shared --enable-static"

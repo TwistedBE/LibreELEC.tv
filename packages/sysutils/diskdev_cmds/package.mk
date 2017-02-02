@@ -18,7 +18,6 @@
 
 PKG_NAME="diskdev_cmds"
 PKG_VERSION="332.14"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="APSL"
 PKG_SITE="http://src.gnu-darwin.org/DarwinSourceArchive/expanded/diskdev_cmds/"
@@ -38,10 +37,10 @@ pre_make_target() {
 }
 
 makeinstall_target() {
-  mkdir -p $INSTALL/sbin
-    cp fsck_hfs.tproj/fsck_hfs $INSTALL/sbin
-      ln -sf fsck_hfs $INSTALL/sbin/fsck.hfs
-      ln -sf fsck_hfs $INSTALL/sbin/fsck.hfsplus
+  mkdir -p $INSTALL/usr/sbin
+    cp fsck_hfs.tproj/fsck_hfs $INSTALL/usr/sbin
+      ln -sf fsck_hfs $INSTALL/usr/sbin/fsck.hfs
+      ln -sf fsck_hfs $INSTALL/usr/sbin/fsck.hfsplus
 }
 
 make_init() {

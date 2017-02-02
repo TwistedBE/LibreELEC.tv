@@ -18,7 +18,6 @@
 
 PKG_NAME="libdvdread"
 PKG_VERSION="17d99db"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/xbmc/libdvdread"
@@ -29,10 +28,16 @@ PKG_SHORTDESC="libdvdread: a library which provides a simple foundation for read
 PKG_LONGDESC="libdvdread is a library which provides a simple foundation for reading DVDs."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
-PKG_CONFIGURE_OPTS_TARGET="--enable-static --disable-shared --with-libdvdcss --with-pic"
+configure_target() {
+  :
+}
 
-pre_configure_target() {
-  export CFLAGS="$CFLAGS -D_XBMC -DHAVE_DVDCSS_DVDCSS_H"
+make_target() {
+  :
+}
+
+makeinstall_target() {
+  :
 }

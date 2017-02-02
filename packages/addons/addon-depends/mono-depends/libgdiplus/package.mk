@@ -18,7 +18,6 @@
 
 PKG_NAME="libgdiplus"
 PKG_VERSION="4.2"
-PKG_REV="0"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/mono/libgdiplus"
@@ -35,3 +34,7 @@ PKG_CONFIGURE_OPTS_TARGET="--enable-shared \
                            --with-libgif   \
                            --with-libjpeg  \
                            --with-libtiff"
+
+makeinstall_target() {
+  make install DESTDIR=$INSTALL
+}

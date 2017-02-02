@@ -18,7 +18,6 @@
 
 PKG_NAME="liblognorm"
 PKG_VERSION="2.0.1"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.liblognorm.com/"
@@ -28,7 +27,7 @@ PKG_SECTION="rsyslog"
 PKG_SHORTDESC="liblognorm"
 PKG_LONGDESC="liblognorm"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--enable-static --disable-shared \

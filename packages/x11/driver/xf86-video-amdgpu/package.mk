@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="xf86-video-amdgpu"
-PKG_VERSION="1.1.1"
-PKG_REV="1"
+PKG_VERSION="1.2.0"
 PKG_ARCH="x86_64"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.x.org/"

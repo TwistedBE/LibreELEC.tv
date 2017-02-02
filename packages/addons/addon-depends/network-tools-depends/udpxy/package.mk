@@ -18,7 +18,6 @@
 
 PKG_NAME="udpxy"
 PKG_VERSION="1.0.23-0"
-PKG_REV="0"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.udpxy.com/download-en.html"
@@ -33,6 +32,7 @@ PKG_AUTORECONF="no"
 pre_configure_target() {
   # fails to build with gcc 4.9 + lto
   strip_lto
+  CFLAGS="$CFLAGS -Wno-error=unused-const-variable"
 }
 
 makeinstall_target() {

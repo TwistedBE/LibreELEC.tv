@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of LibreELEC - http://libreelec.tv
-#      Copyright (C) 2016 Christian Hewitt (chewitt@libreelec.tv)
+#      Copyright (C) 2016-2017 Christian Hewitt (chewitt@libreelec.tv)
 #
 #  LibreELEC is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -18,8 +18,7 @@
 ################################################################################
 
 PKG_NAME="openvpn"
-PKG_VERSION="2.3.12"
-PKG_REV="1"
+PKG_VERSION="2.4.0"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://openvpn.net"
@@ -30,7 +29,7 @@ PKG_SHORTDESC="openvpn: a full featured SSL VPN software solution that integrate
 PKG_LONGDESC="OpenVPN Access Server is a full featured SSL VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, and Linux OS environments. OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal network and/ or private cloud network resources and applications with fine-grained access control."
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="ac_cv_have_decl_TUNSETPERSIST=no \
                            --disable-server \

@@ -17,7 +17,6 @@
 ################################################################################
 
 PKG_NAME="brcmap6xxx-aml"
-PKG_REV="1"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://openlinux.amlogic.com:8000/download/ARM/wifi/"
@@ -41,9 +40,9 @@ make_target() {
 }
 
 makeinstall_target() {
-  mkdir -p $INSTALL/lib/modules/$(get_module_dir)/bcmdhd
-  cp *.ko $INSTALL/lib/modules/$(get_module_dir)/bcmdhd
+  mkdir -p $INSTALL/usr/lib/modules/$(get_module_dir)/bcmdhd
+  cp *.ko $INSTALL/usr/lib/modules/$(get_module_dir)/bcmdhd
 
-  mkdir -p $INSTALL/lib/firmware/brcm
-  cp $PKG_DIR/config/config.txt $INSTALL/lib/firmware/brcm
+  mkdir -p $INSTALL/usr/lib/firmware/brcm
+  cp $PKG_DIR/config/config.txt $INSTALL/usr/lib/firmware/brcm
 }

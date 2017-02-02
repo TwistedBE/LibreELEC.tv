@@ -18,7 +18,6 @@
 
 PKG_NAME="v86d"
 PKG_VERSION="0.1.10"
-PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://dev.gentoo.org/~spock/projects/uvesafb/"
@@ -37,4 +36,8 @@ pre_configure_init() {
 # v86d fails to build in subdirs
   cd $ROOT/$PKG_BUILD
     rm -rf .$TARGET_NAME-init
+}
+
+makeinstall_init() {
+  DESTDIR=$INSTALL/usr make install
 }

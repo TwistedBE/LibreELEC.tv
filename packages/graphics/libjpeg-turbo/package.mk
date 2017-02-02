@@ -18,7 +18,6 @@
 
 PKG_NAME="libjpeg-turbo"
 PKG_VERSION="1.5.0"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://libjpeg-turbo.virtualgl.org/"
@@ -30,7 +29,7 @@ PKG_LONGDESC="libjpeg-turbo is a high-speed version of libjpeg for x86 and x86-6
 
 PKG_IS_ADDON="no"
 PKG_USE_CMAKE="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_HOST="--enable-static \
                          --disable-shared \

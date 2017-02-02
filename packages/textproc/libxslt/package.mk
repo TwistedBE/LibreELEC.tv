@@ -18,7 +18,6 @@
 
 PKG_NAME="libxslt"
 PKG_VERSION="1.1.29"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="http://xmlsoft.org/xslt/"
@@ -30,7 +29,7 @@ PKG_SHORTDESC="libxslt"
 PKG_LONGDESC="libxslt"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_HOST="  ac_cv_header_ansidecl_h=no \
                            --enable-static \

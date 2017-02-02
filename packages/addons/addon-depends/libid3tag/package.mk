@@ -20,7 +20,6 @@
 
 PKG_NAME="libid3tag"
 PKG_VERSION="0.15.1b"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.mars.org/home/rob/proj/mpeg/"
@@ -31,7 +30,7 @@ PKG_SHORTDESC="library for id3 tagging"
 PKG_LONGDESC="library for id3 tagging"
 PKG_IS_ADDON="no"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_MAINTAINER="Lukas Sabota (LTsmooth42@gmail.com)"
 

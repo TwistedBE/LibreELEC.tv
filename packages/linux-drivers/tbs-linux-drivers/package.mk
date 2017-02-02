@@ -18,7 +18,6 @@
 
 PKG_NAME="tbs-linux-drivers"
 PKG_VERSION="160126"
-PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.tbsdtv.com/english/Download.html"
@@ -45,8 +44,8 @@ make_target() {
 }
 
 makeinstall_target() {
-  mkdir -p $INSTALL/lib/modules/$(get_module_dir)/updates/tbs
-  find $ROOT/$PKG_BUILD/linux-tbs-drivers/ -name \*.ko -exec cp {} $INSTALL/lib/modules/$(get_module_dir)/updates/tbs \;
+  mkdir -p $INSTALL/usr/lib/modules/$(get_module_dir)/updates/tbs
+  find $ROOT/$PKG_BUILD/linux-tbs-drivers/ -name \*.ko -exec cp {} $INSTALL/usr/lib/modules/$(get_module_dir)/updates/tbs \;
   mkdir -p $INSTALL/lib/firmware/
   cp $ROOT/$PKG_BUILD/*.fw $INSTALL/lib/firmware/
 }

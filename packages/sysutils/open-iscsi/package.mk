@@ -19,7 +19,6 @@
 
 PKG_NAME="open-iscsi"
 PKG_VERSION="bf39941"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/mikechristie/open-iscsi"
@@ -47,6 +46,6 @@ configure_init() {
 }
 
 makeinstall_init() {
-  mkdir -p $INSTALL/sbin
-    cp -P $ROOT/$PKG_BUILD/usr/iscsistart $INSTALL/sbin
+  mkdir -p $INSTALL/usr/sbin
+    cp -P $ROOT/$PKG_BUILD/usr/iscsistart $INSTALL/usr/sbin
 }

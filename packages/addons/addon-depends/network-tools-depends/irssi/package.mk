@@ -18,7 +18,6 @@
 
 PKG_NAME="irssi"
 PKG_VERSION="0.8.19"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.irssi.org/"
@@ -27,7 +26,7 @@ PKG_DEPENDS_TARGET="toolchain glib netbsd-curses libressl"
 PKG_SECTION="tools"
 PKG_SHORTDESC="IRC client"
 PKG_LONGDESC="Irssi is a terminal based IRC client for UNIX systems"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--with-sysroot=$SYSROOT_PREFIX \
         --enable-ssl \

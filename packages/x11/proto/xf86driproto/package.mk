@@ -18,7 +18,6 @@
 
 PKG_NAME="xf86driproto"
 PKG_VERSION="2.1.1"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="xf86driproto: XF86DRI extension headers"
 PKG_LONGDESC="XF86DRI extension headers"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"

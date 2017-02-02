@@ -18,7 +18,6 @@
 
 PKG_NAME="bwm-ng"
 PKG_VERSION="0.6.1"
-PKG_REV="0"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.gropp.org/?id=projects&sub=bwm-ng"
@@ -27,7 +26,7 @@ PKG_DEPENDS_TARGET="toolchain netbsd-curses libstatgrab"
 PKG_SECTION="network/analyzer"
 PKG_SHORTDESC="bwm-ng: small and simple console-based live network and disk io bandwidth monitor"
 PKG_LONGDESC="Bandwidth Monitor NG is a small and simple console-based live network and disk io bandwidth monitor for Linux, BSD, Solaris, Mac OS X and others."
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--with-libstatgrab \
                            --with-time \

@@ -18,7 +18,6 @@
 
 PKG_NAME="compositeproto"
 PKG_VERSION="0.4.2"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.X.org"
@@ -29,7 +28,7 @@ PKG_SHORTDESC="compositeproto: Composite extension headers"
 PKG_LONGDESC="Composite extension headers"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 # package specific configure options
 PKG_CONFIGURE_OPTS_TARGET="--without-xmlto"

@@ -18,7 +18,6 @@
 
 PKG_NAME="mpg123"
 PKG_VERSION="1.23.6"
-PKG_REV="0"
 PKG_ARCH="any"
 PKG_LICENSE="LGPLv2"
 PKG_SITE="http://www.mpg123.org/"
@@ -29,6 +28,6 @@ PKG_SHORTDESC="mpg123"
 PKG_LONGDESC="A fast MP3 Player"
 
 PKG_IS_ADDON="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-shared --enable-static"

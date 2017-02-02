@@ -17,8 +17,7 @@
 ################################################################################
 
 PKG_NAME="pciutils"
-PKG_VERSION="3.5.1"
-PKG_REV="1"
+PKG_VERSION="3.5.2"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://mj.ucw.cz/pciutils.shtml"

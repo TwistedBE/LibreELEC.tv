@@ -18,7 +18,7 @@
 
 PKG_NAME="ffmpegx"
 PKG_VERSION="libreelec"
-PKG_REV="4"
+PKG_REV="6"
 PKG_ARCH="any"
 PKG_LICENSE="LGPLv2.1+"
 PKG_SITE="https://ffmpeg.org"
@@ -100,6 +100,10 @@ configure_target() {
     `#Advanced options` \
     $FFMPEG_ARM_AO \
 
+}
+
+makeinstall_target() {
+  make install DESTDIR=$INSTALL
 }
 
 post_makeinstall_target() {

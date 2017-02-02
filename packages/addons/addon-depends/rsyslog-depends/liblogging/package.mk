@@ -18,7 +18,6 @@
 
 PKG_NAME="liblogging"
 PKG_VERSION="1.0.5"
-PKG_REV="100"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.liblogging.org/"
@@ -27,7 +26,7 @@ PKG_DEPENDS_TARGET="toolchain systemd"
 PKG_SHORTDESC="liblogging"
 PKG_LONGDESC="liblogging"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 PKG_IS_ADDON="no"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-man-pages \

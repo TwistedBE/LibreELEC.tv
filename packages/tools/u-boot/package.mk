@@ -32,7 +32,6 @@ elif [ "$UBOOT_VERSION" = "hardkernel" ]; then
 else
   exit 0
 fi
-PKG_REV="1"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="GPL"
 PKG_SECTION="tools"
@@ -56,6 +55,10 @@ pre_configure_target() {
 
 # dont build in parallel because of problems
   MAKEFLAGS=-j1
+
+# copy compiler-gcc5.h to compiler-gcc6. for fake building
+  cp include/linux/compiler-gcc5.h include/linux/compiler-gcc6.h
+
 }
 
 make_target() {

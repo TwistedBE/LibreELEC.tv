@@ -18,12 +18,11 @@
 
 PKG_NAME="libc"
 PKG_VERSION=""
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.openelec.tv"
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain glibc timezone-data"
+PKG_DEPENDS_TARGET="toolchain glibc tz"
 PKG_DEPENDS_INIT="toolchain glibc:init"
 PKG_SECTION="virtual"
 PKG_SHORTDESC="libc: Metapackage"

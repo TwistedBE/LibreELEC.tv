@@ -17,9 +17,12 @@ setup_toolchain() {
       export CFLAGS="$TARGET_CFLAGS"
       export CXXFLAGS="$TARGET_CXXFLAGS"
       export LDFLAGS="$TARGET_LDFLAGS"
+      export PKG_CONFIG="$ROOT/$TOOLCHAIN/bin/pkg-config"
       export PKG_CONFIG_PATH=""
       export PKG_CONFIG_LIBDIR="$SYSROOT_PREFIX/usr/lib/pkgconfig:$SYSROOT_PREFIX/usr/share/pkgconfig"
       export PKG_CONFIG_SYSROOT_DIR="$SYSROOT_PREFIX"
+      export PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1
+      export PKG_CONFIG_ALLOW_SYSTEM_LIBS=1
       export CMAKE_CONF=$ROOT/$TOOLCHAIN/etc/cmake-$TARGET_NAME.conf
       export CMAKE="cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_CONF -DCMAKE_INSTALL_PREFIX=/usr"
       if [ ! -f $CMAKE_CONF ] ; then
@@ -34,6 +37,7 @@ setup_toolchain() {
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> $CMAKE_CONF
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)"  >> $CMAKE_CONF
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)"  >> $CMAKE_CONF
+        echo "SET(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)"  >> $CMAKE_CONF
       fi
       export HOST_CC="$ROOT/$TOOLCHAIN/bin/host-gcc"
       export HOST_CXX="$ROOT/$TOOLCHAIN/bin/host-g++"
@@ -65,9 +69,12 @@ setup_toolchain() {
       export CFLAGS="$HOST_CFLAGS"
       export CXXFLAGS="$HOST_CXXFLAGS"
       export LDFLAGS="$HOST_LDFLAGS"
+      export PKG_CONFIG="$ROOT/$TOOLCHAIN/bin/pkg-config"
       export PKG_CONFIG_PATH=""
       export PKG_CONFIG_LIBDIR="$ROOT/$TOOLCHAIN/lib/pkgconfig:$ROOT/$TOOLCHAIN/share/pkgconfig"
       export PKG_CONFIG_SYSROOT_DIR=""
+      unset PKG_CONFIG_ALLOW_SYSTEM_CFLAGS
+      unset PKG_CONFIG_ALLOW_SYSTEM_LIBS
       export CMAKE_CONF=$ROOT/$TOOLCHAIN/etc/cmake-$HOST_NAME.conf
       export CMAKE="cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_CONF -DCMAKE_INSTALL_PREFIX=$ROOT/$TOOLCHAIN"
       if [ ! -f $CMAKE_CONF ] ; then
@@ -82,15 +89,16 @@ setup_toolchain() {
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM BOTH)" >> $CMAKE_CONF
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)" >> $CMAKE_CONF
         echo "SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)" >> $CMAKE_CONF
+        echo "SET(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE BOTH)" >> $CMAKE_CONF
       fi
-      export HOST_CC="$HOST_CC"
-      export HOST_CXX="$HOST_CXX"
-      export HOSTCC="$HOST_CC"
-      export HOSTCXX="$HOST_CXX"
-      export CC_FOR_BUILD="$HOST_CC"
-      export CXX_FOR_BUILD="$HOST_CXX"
-      export BUILD_CC="$HOST_CC"
-      export BUILD_CXX="$HOST_CXX"
+      export HOST_CC="$CC"
+      export HOST_CXX="$CXX"
+      export HOSTCC="$CC"
+      export HOSTCXX="$CXX"
+      export CC_FOR_BUILD="$CC"
+      export CXX_FOR_BUILD="$CXX"
+      export BUILD_CC="$CC"
+      export BUILD_CXX="$CXX"
       ;;
   esac
 }
@@ -117,7 +125,7 @@ kernel_version() {
 
 # get kernel module dir
 get_module_dir() {
-  basename $(ls -d $(get_build_dir linux)/.install_pkg/lib/modules/*)
+  basename $(ls -d $(get_build_dir linux)/.install_pkg/usr/lib/modules/*)
 }
 
 # get package's build dir
@@ -134,6 +142,14 @@ get_build_dir() {
     fi
 
     echo $ROOT/$BUILD/${PKG_NAME}-${PKG_VERSION}
+  fi
+}
+
+get_pkg_version() {
+  if [ ! -z $1 ] ; then
+    cd $ROOT
+    . config/options $1
+    echo "$PKG_VERSION"
   fi
 }
 
@@ -270,6 +286,11 @@ enable_service () {
       fi
     done
   fi
+  for target in `grep '^Alias' $target_dir/$unit_dir/$unit | cut -f2 -d=` ; do
+    if [ -n "$target" ]; then
+      ln -sf ${unit} ${target_dir}/$unit_dir/${target}
+    fi
+  done
 }
 
 check_path() {
@@ -288,13 +309,13 @@ dashes="==========================="
 
 check_config() {
 dashes="==========================="
-  if [ ! -d $PROJECT_DIR/$PROJECT -a ! -d $HOME/.libreelec/projects/$PROJECT ]; then
+  if [ ! -d $PROJECT_DIR/$PROJECT ]; then
     check_project="$check_project\n $dashes$dashes$dashes"
     check_project="$check_project\n ERROR: Project not found, use a valid project or create a new config"
     check_project="$check_project\n $dashes$dashes$dashes"
     check_project="$check_project\n\n Valid projects:"
 
-    for projects in $PROJECT_DIR/* $HOME/.libreelec/projects/*; do
+    for projects in $PROJECT_DIR/*; do
       check_project="$check_project\n - $(basename $projects)"
     done
     echo -e $check_project
@@ -354,7 +375,6 @@ show_config() {
   config_message="$config_message\n - FLOAT:\t\t\t\t $TARGET_FLOAT"
   config_message="$config_message\n - FPU:\t\t\t\t\t $TARGET_FPU"
   config_message="$config_message\n - SIMD support:\t\t\t $SIMD_SUPPORT"
-  config_message="$config_message\n - Optimizations:\t\t\t $OPTIMIZATIONS"
   config_message="$config_message\n - LTO (Link Time Optimization) support: $LTO_SUPPORT"
   config_message="$config_message\n - GOLD (Google Linker) Support:\t $GOLD_SUPPORT"
   config_message="$config_message\n - LLVM support:\t\t\t $LLVM_SUPPORT"

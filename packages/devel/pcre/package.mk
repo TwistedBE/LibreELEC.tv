@@ -18,7 +18,6 @@
 
 PKG_NAME="pcre"
 PKG_VERSION="8.39"
-PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.pcre.org/"
@@ -31,7 +30,7 @@ PKG_LONGDESC="The PCRE library is a set of functions that implement regular expr
 
 PKG_IS_ADDON="no"
 PKG_USE_CMAKE="no"
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_HOST="--prefix=$ROOT/$TOOLCHAIN \
              --enable-utf8 \

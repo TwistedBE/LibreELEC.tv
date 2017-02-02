@@ -18,7 +18,6 @@
 
 PKG_NAME="arm-mem"
 PKG_VERSION="3aee5f4"
-PKG_REV="1"
 PKG_ARCH="arm"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/bavison/arm-mem"
@@ -44,18 +43,18 @@ make_init() {
 }
 
 makeinstall_target() {
-  mkdir -p $INSTALL/lib
-    cp -P libarmmem.so $INSTALL/lib
+  mkdir -p $INSTALL/usr/lib
+    cp -P libarmmem.so $INSTALL/usr/lib
 
   mkdir -p $INSTALL/etc
-    echo "/lib/libarmmem.so" >> $INSTALL/etc/ld.so.preload
+    echo "/usr/lib/libarmmem.so" >> $INSTALL/etc/ld.so.preload
 }
 
 makeinstall_init() {
-  mkdir -p $INSTALL/lib
-    cp -P libarmmem.so $INSTALL/lib
+  mkdir -p $INSTALL/usr/lib
+    cp -P libarmmem.so $INSTALL/usr/lib
 
   mkdir -p $INSTALL/etc
-    echo "/lib/libarmmem.so" >> $INSTALL/etc/ld.so.preload
+    echo "/usr/lib/libarmmem.so" >> $INSTALL/etc/ld.so.preload
 }
 
